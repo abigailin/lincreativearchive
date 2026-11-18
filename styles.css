@@ -44,3 +44,17 @@ figure.wide {
   width: 100%;
 }
 
+
+/* Center the gap between photos 10 and 11 */
+.archive-gallery > figure.gallery-pair {
+  grid-column: auto;
+  width: 100%;
+  margin: 0;
+}
+
+/* Start photo 10 on a new row */
+.archive-gallery > figure.gallery-pair:first-of-type {
+  grid-column: 1;
+}
+
+
