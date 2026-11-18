@@ -11,6 +11,31 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
 <!-- Gallery-only styles: the original site design is unchanged. -->
+
+/* Photos 10 and 11: matching editorial crops */
+.gallery-pair .photo-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.gallery-pair .photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Keep the people and creek in the frame */
+.river-photo .photo-frame img {
+  object-position: center 60%;
+}
+
+/* Photo 12: full-width cinematic image */
+figure.wide {
+  grid-column: 1 / -1;
+}
+
 <style>
     .archive-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; padding:35px 5% 0; }
     .archive-gallery figure { margin:0; min-width:0; }
@@ -86,9 +111,42 @@
 <figure class="portrait"><div class="photo-frame"><img alt="Pink building facade" loading="lazy" src="pictures/film-pink-building.jpeg"/></div><figcaption>07 / Pink walls</figcaption></figure>
 <figure class="portrait"><div class="photo-frame"><img alt="Yellow building overlooking a city" loading="lazy" src="pictures/film-lisbon.jpeg"/></div><figcaption>08 / Rooftops</figcaption></figure>
 <figure class="portrait"><div class="photo-frame"><img alt="Sheep grazing on a grassy hillside" loading="lazy" src="pictures/film-sheep.jpeg"/></div><figcaption>09 / Slow afternoon</figcaption></figure>
-<figure><div class="photo-frame"><img alt="A moment from the film archive" loading="lazy" src="pictures/film-extra.jpeg"/></div><figcaption>10 / From the archive</figcaption></figure>
-<figure class="portrait"><div class="photo-frame"><img alt="Friends standing among rocks in a creek" loading="lazy" src="pictures/film-river.jpeg"/></div><figcaption>11 / River days</figcaption></figure>
-<figure class="wide"><div class="photo-frame"><img alt="Surfer riding a turquoise wave beneath a blue sky" loading="lazy" src="pictures/film-surfer-wave.jpeg"/></div><figcaption>12 / On a little wave</figcaption></figure>
+<
+<!-- PHOTO 10: Group -->
+<figure class="gallery-pair">
+  <div class="photo-frame">
+    <img
+      src="pictures/film-extra.jpeg"
+      alt="Friends celebrating together"
+      loading="lazy"
+    />
+  </div>
+  <figcaption>10 / From the archive</figcaption>
+</figure>
+
+<!-- PHOTO 11: River -->
+<figure class="gallery-pair river-photo">
+  <div class="photo-frame">
+    <img
+      src="pictures/film-river.jpeg"
+      alt="Friends standing in a creek"
+      loading="lazy"
+    />
+  </div>
+  <figcaption>11 / River days</figcaption>
+</figure>
+
+<!-- PHOTO 12: Surf -->
+<figure class="wide">
+  <div class="photo-frame">
+    <img
+      src="pictures/film-surfer-wave.jpeg"
+      alt="Surfer riding a wave"
+      loading="lazy"
+    />
+  </div>
+  <figcaption>12 / On a little wave</figcaption>
+</figure>
 
 <!-- To add a photo, upload it to /pictures and copy another figure here. -->
 </div>
