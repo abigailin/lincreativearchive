@@ -12,30 +12,6 @@
 <link href="styles.css" rel="stylesheet"/>
 <!-- Gallery-only styles: the original site design is unchanged. -->
 
-/* Photos 10 and 11: matching editorial crops */
-.gallery-pair .photo-frame {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
-
-.gallery-pair .photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Keep the people and creek in the frame */
-.river-photo .photo-frame img {
-  object-position: center 60%;
-}
-
-/* Photo 12: full-width cinematic image */
-figure.wide {
-  grid-column: 1 / -1;
-}
-
 <style>
     .archive-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; padding:35px 5% 0; }
     .archive-gallery figure { margin:0; min-width:0; }
