@@ -1,49 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A personal collection of food, film, and other little pleasures." />
-  <title>the good stuff. — Food & Film</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="A personal collection of food, film, and other little pleasures." name="description"/>
+<title>the good stuff. — Food &amp; Film</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<!-- Gallery-only styles: the original site design is unchanged. -->
+<style>
+    .archive-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; padding:35px 5% 0; }
+    .archive-gallery figure { margin:0; min-width:0; }
+    .archive-gallery img { width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+    .archive-gallery .photo-frame { aspect-ratio:4/3; overflow:hidden; background:var(--aqua); }
+    .archive-gallery .portrait .photo-frame { aspect-ratio:3/4; }
+    .archive-gallery .wide { grid-column:span 2; }
+    .archive-gallery .wide .photo-frame { aspect-ratio:8/3; }
+    .archive-gallery figure:hover img { transform:scale(1.025); }
+    .archive-gallery figcaption { padding-top:9px; font-size:10px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+    .kitchen-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .kitchen-gallery .photo-frame { aspect-ratio:4/3; }
+    .gallery-intro { padding:25px 5% 0; max-width:700px; font-size:14px; line-height:1.8; }
+    @media(max-width:700px){ .archive-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:28px 0 0} .archive-gallery .wide{grid-column:span 2} .archive-gallery .wide .photo-frame{aspect-ratio:2/1} .kitchen-gallery{grid-template-columns:1fr} .gallery-intro{padding:20px 0 0} }
+  
+/* Weekly kitchen feature; original palette and layout retained */
+.weekly-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px}
+.weekly-date{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.weekly-dish{font-family:'DM Serif Display',serif;font-size:clamp(27px,3vw,44px);font-weight:400;margin:18px 0 6px}
+.weekly-description{max-width:420px}
+.kitchen-archive{padding:30px 5% 0;border-top:1px solid rgba(96,56,33,.35);margin-top:55px}
+.kitchen-archive h3{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,48px);font-weight:400;margin:0 0 8px}
+.kitchen-archive p{font-size:13px}
+.weekly-image img{object-fit:cover}
+</style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <a class="eyebrow home-link" href="#top">A PERSONAL COLLECTION</a>
-    <a class="wordmark" href="#top">the good stuff.</a>
-    <nav aria-label="Main navigation"><a href="#kitchen">KITCHEN</a><a href="#film">FILM</a><a href="#about">ABOUT</a></nav>
-  </header>
-  <main>
-    <section class="intro" aria-labelledby="intro-title">
-      <p class="issue">VOL. 01 &nbsp; / &nbsp; CALIFORNIA</p>
-      <h1 id="intro-title">Food, film &<br /><em>other little pleasures.</em></h1>
+<header class="site-header" id="top">
+<a class="eyebrow home-link" href="#top">A PERSONAL COLLECTION</a>
+<a class="wordmark" href="#top">the good stuff.</a>
+<nav aria-label="Main navigation"><a href="#kitchen">KITCHEN</a><a href="#film">FILM</a><a href="#about">ABOUT</a></nav>
+</header>
+<main>
+<section aria-labelledby="intro-title" class="intro">
+<p class="issue">VOL. 01   /   CALIFORNIA</p>
+<h1 id="intro-title">Food, film &amp;<br/><em>other little pleasures.</em></h1>
+<p class="intro-copy">An ongoing collection of things made, seen, and savored.</p>
+</section>
+<section aria-label="Featured collections" class="editorial-grid">
+<a class="feature feature-large" href="#film"><img alt="People in the turquoise sea" src="pictures/film-ocean.jpeg"/><span class="image-tag">THROUGH THE LENS — 001</span></a>
+<a class="feature feature-food" href="#kitchen"><img alt="Berry pavlova on a green platter" src="pictures/kitchen-pavlova.jpeg"/><span class="image-tag">FROM THE KITCHEN — 001</span></a>
+<div class="feature-note"><span class="asterisk">✳</span><p>Made with love<br/>&amp; good light.</p><span class="note-index">EST. 2026</span></div>
+</section>
+<section class="collection" id="kitchen">
+<div class="section-heading"><span>01 / FROM THE KITCHEN</span><span>GOOD THINGS TO EAT</span></div>
+<div class="collection-layout">
+<div><h2>A little<br/><em>something delicious.</em></h2><p>Seasonal cooking, experiments, and plates worth remembering.</p>
+<p class="weekly-label">✳ Dish of the week</p>
+<!-- WEEKLY UPDATE: edit ONLY the four marked fields below, and upload the new image into pictures/ -->
+<h3 class="weekly-dish">Persimmon &amp; burrata</h3> <!-- CHANGE DISH NAME -->
+<p class="weekly-date">November 18, 2026</p> <!-- CHANGE DATE -->
+<p class="weekly-description">Persimmon, burrata, pickled fennel, mint, olive oil &amp; Aleppo pepper.</p> <!-- CHANGE DESCRIPTION -->
+</div>
+<div class="collection-photo weekly-image"><img alt="Persimmon and burrata salad with fresh herbs" loading="lazy" src="pictures/kitchen-persimmon.jpeg"/></div> <!-- CHANGE IMAGE FILENAME -->
+</div>
 
-<img
-  src="pictures/IMG-5416.jpg"
-  alt="Ocean photograph on film"
-  style="width: 400px; max-width: 100%; height: auto;"
->
-      <p class="intro-copy">An ongoing collection of things made, seen, and savored.</p>
-    </section>
-    <section class="editorial-grid" aria-label="Featured collections">
-      <a class="feature feature-large" href="#film"><img src="images/coast.jpg" alt="Your favorite film photograph of the coast" /><span class="image-tag">THROUGH THE LENS — 001</span></a>
-      <a class="feature feature-food" href="#kitchen"><img src="images/food.jpg" alt="Your favorite culinary photograph" /><span class="image-tag">FROM THE KITCHEN — 001</span></a>
-      <div class="feature-note"><span class="asterisk">✳</span><p>Made with love<br />& good light.</p><span class="note-index">EST. 2026</span></div>
-    </section>
-    <section class="collection" id="kitchen">
-      <div class="section-heading"><span>01 / FROM THE KITCHEN</span><span>GOOD THINGS TO EAT</span></div>
-      <div class="collection-layout"><div><h2>A little<br /><em>something delicious.</em></h2><p>Seasonal cooking, experiments, and plates worth remembering.</p></div><div class="collection-photo"><img src="images/kitchen-detail.jpg" alt="A plated dish from your kitchen" loading="lazy" /></div></div>
-    </section>
-    <section class="collection film-section" id="film">
-      <div class="section-heading"><span>02 / THROUGH THE LENS</span><span>PLACES & MOMENTS</span></div>
-      <div class="collection-layout reverse"><div class="collection-photo"><img src="images/film-detail.jpg" alt="A favorite analog film photograph" loading="lazy" /></div><div><h2>Somewhere<br /><em>in the sunshine.</em></h2><p>Places I've been, friends I've met, and moments on film.</p></div></div>
-    </section>
-    <section class="about" id="about"><span class="eyebrow">03 / A LITTLE ABOUT ME</span><h2>Hi, I'm Abby.</h2><p>I like film, seasonal produce, the ocean, and noticing the little things. This is a place to keep them all.</p><a href="mailto:hello@example.com">SAY HELLO ↗</a></section>
-  </main>
-  <footer><span>THE GOOD STUFF. © <span id="year">2026</span></span><a href="#top">BACK TO TOP ↑</a><span>FOOD / FILM / EVERYTHING ELSE</span></footer>
-  <script src="script.js"></script>
+<div class="kitchen-archive"><h3>Kitchen notes &amp; past dishes.</h3><p>Previous dishes will live here as the collection grows. The pavlova is featured above.</p>
+<!-- TO ARCHIVE LAST WEEK'S DISH: add its image here as a figure BEFORE replacing the weekly image. Each photograph should appear only once on the page. -->
+<div aria-label="Past dishes" class="archive-gallery kitchen-gallery"></div></div></section>
+<section class="collection film-section" id="film">
+<div class="section-heading"><span>02 / THROUGH THE LENS</span><span>PLACES &amp; MOMENTS</span></div>
+<div class="collection-layout reverse"><div class="collection-photo"><img alt="Surfer carrying a board out of the shore break" loading="lazy" src="pictures/film-surfer-shore.jpeg"/></div><div><h2>Somewhere<br/><em>in the sunshine.</em></h2><p>Places I've been, friends I've met, and moments on film.</p></div></div>
+<div class="gallery-intro">An ongoing roll of places, people, and little moments worth keeping.</div>
+<div aria-label="Film photography gallery" class="archive-gallery"><!-- Every photo appears only once on the page. Add new photos as figures here. -->
+<!-- ADD A FILM PHOTO: copy a <figure> block, update its src, alt, and caption. -->
+
+<figure><div class="photo-frame"><img alt="Lush mountains above a field" loading="lazy" src="pictures/film-mountains.jpeg"/></div><figcaption>01 / Green everywhere</figcaption></figure>
+<figure><div class="photo-frame"><img alt="Two friends beneath a tree by the beach" loading="lazy" src="pictures/film-beach-friends.jpeg"/></div><figcaption>02 / Under the trees</figcaption></figure>
+<figure><div class="photo-frame"><img alt="Person walking along the tropical shoreline" loading="lazy" src="pictures/film-shore.jpeg"/></div><figcaption>03 / At the shoreline</figcaption></figure>
+<figure><div class="photo-frame"><img alt="Pink flowering tree above people relaxing on grass" loading="lazy" src="pictures/film-blossoms.jpeg"/></div><figcaption>04 / Spring afternoon</figcaption></figure>
+<figure><div class="photo-frame"><img alt="Vintage yellow truck with orange film light leak" loading="lazy" src="pictures/film-truck.jpeg"/></div><figcaption>05 / A little sun flare</figcaption></figure>
+<figure><div class="photo-frame"><img alt="Bright red cherries at the market" loading="lazy" src="pictures/film-cherries.jpeg"/></div><figcaption>06 / Market day</figcaption></figure>
+<figure class="portrait"><div class="photo-frame"><img alt="Pink building facade" loading="lazy" src="pictures/film-pink-building.jpeg"/></div><figcaption>07 / Pink walls</figcaption></figure>
+<figure class="portrait"><div class="photo-frame"><img alt="Yellow building overlooking a city" loading="lazy" src="pictures/film-lisbon.jpeg"/></div><figcaption>08 / Rooftops</figcaption></figure>
+<figure class="portrait"><div class="photo-frame"><img alt="Sheep grazing on a grassy hillside" loading="lazy" src="pictures/film-sheep.jpeg"/></div><figcaption>09 / Slow afternoon</figcaption></figure>
+<figure><div class="photo-frame"><img alt="A moment from the film archive" loading="lazy" src="pictures/film-extra.jpeg"/></div><figcaption>10 / From the archive</figcaption></figure>
+<figure class="portrait"><div class="photo-frame"><img alt="Friends standing among rocks in a creek" loading="lazy" src="pictures/film-river.jpeg"/></div><figcaption>11 / River days</figcaption></figure>
+<figure class="wide"><div class="photo-frame"><img alt="Surfer riding a turquoise wave beneath a blue sky" loading="lazy" src="pictures/film-surfer-wave.jpeg"/></div><figcaption>12 / On a little wave</figcaption></figure>
+
+<!-- To add a photo, upload it to /pictures and copy another figure here. -->
+</div>
+</section>
+<section class="about" id="about"><span class="eyebrow">03 / A LITTLE ABOUT ME</span><h2>Hi, I'm Abby.</h2><p>I like film, seasonal produce, the ocean, and noticing the little things. This is a place to keep them all.</p><!-- Add your email here later: <a href="mailto:you@example.com">SAY HELLO ↗</a> --></section>
+</main>
+<footer><span>THE GOOD STUFF. © <span id="year">2026</span></span><a href="#top">BACK TO TOP ↑</a><span>FOOD / FILM / EVERYTHING ELSE</span></footer>
+<script src="script.js"></script>
 </body>
 </html>
